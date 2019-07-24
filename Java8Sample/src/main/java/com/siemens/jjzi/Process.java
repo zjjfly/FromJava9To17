@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * @author z00405ze
+ */
 public class Process {
     public static void main(String[] args) throws InterruptedException, IOException {
         //shutdown hook不一定会被调用

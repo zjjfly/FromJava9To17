@@ -9,7 +9,8 @@ import java.util.List;
 public class LocalVariableTypeInference {
     public static void main(String[] args) {
         var str = "Hello";
-        System.out.println(str);
+        System.out.println("str:" + str);
+        //不能使用var的情况
         //没有初始化
 //        var list;
         //多个变量
@@ -20,6 +21,7 @@ public class LocalVariableTypeInference {
 //        var addOne = a -> a + 1;
 //        var sqrt = Math::sqrt;
         var numbers = List.of("a", "bc", "d");
+        System.out.print("numbers:");
         for (var nr : numbers) {
             System.out.print(nr + " ");
         }
@@ -30,6 +32,74 @@ public class LocalVariableTypeInference {
             add("d");
         }};
         numbers.sort((var s1, var s2) -> s1.length() - s2.length());
-        System.out.println(numbers);
+        System.out.println("sorted numbers:" + numbers);
+        var divResult = 5 / 2;
+        System.out.println("divResult:" + divResult);
+        var mulResult = 2.5 * 3;
+        System.out.println(mulResult);
+
+        var obj1 = new Child();
+        obj1.whistle();
+        obj1.stand(); // type of obj inferred as Child
+
+        var obj2 = getObject("Child");
+        obj2.whistle();
+        //obj2.stand(); // This line doesn't compile
+
+        var obj3 = new Dog();
+        obj3.bite();
+        obj3.run();
+
+        var obj4 = getObject();
+        obj4.run();
+        //obj4.bite(); // This line doesn't compile
+
+        char[] name = {'S', 't', 'r', 'i', 'n', 'g'};
+        //var name={'S','t','r','i','n','g'}; // This line doesn't compile
+        //var[] name = {'S', 't', 'r', 'i', 'n', 'g'}; // This line doesn't compile
+        //var name[] = {'S', 't', 'r', 'i', 'n', 'g'}; // This line doesn't compile
+        var chars = new char[]{'S','t','r','i','n','g'};
     }
+
+    private static Parent getObject(String type) {
+        if (type.equals("Parent")) {
+            return new Parent();
+        } else {
+            return new Child();
+        }
+    }
+
+    static class Parent {
+        void whistle() {
+            System.out.println("Parent-Whistle");
+        }
+    }
+
+    static class Child extends Parent {
+        @Override
+        void whistle() {
+            System.out.println("Child-Whistle");
+        }
+
+        void stand() {
+            System.out.println("Child-stand");
+        }
+    }
+
+    interface MarathonRunner {
+        default void run() {
+            System.out.println("I'm a marathon runner");
+        }
+    }
+
+    static class Dog implements MarathonRunner {
+        void bite() {
+            System.out.println("Wang!");
+        }
+    }
+
+    private static MarathonRunner getObject() {
+        return new Dog();
+    }
+
 }
