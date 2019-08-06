@@ -1,6 +1,9 @@
 package com.siemens.jjzi;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -30,8 +33,10 @@ public class LocalVariableTypeInference {
             add("a");
             add("bc");
             add("d");
+            add(null);
         }};
-        numbers.sort((var s1, var s2) -> s1.length() - s2.length());
+        Comparator<String> comparator = (@NotNull var s1, @NotNull var s2) -> s1.length() - s2.length();
+        numbers.sort(comparator);
         System.out.println("sorted numbers:" + numbers);
         var divResult = 5 / 2;
         System.out.println("divResult:" + divResult);
@@ -58,7 +63,7 @@ public class LocalVariableTypeInference {
         //var name={'S','t','r','i','n','g'}; // This line doesn't compile
         //var[] name = {'S', 't', 'r', 'i', 'n', 'g'}; // This line doesn't compile
         //var name[] = {'S', 't', 'r', 'i', 'n', 'g'}; // This line doesn't compile
-        var chars = new char[]{'S','t','r','i','n','g'};
+        var chars = new char[]{'S', 't', 'r', 'i', 'n', 'g'};
     }
 
     private static Parent getObject(String type) {
