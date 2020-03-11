@@ -1,6 +1,0 @@
-group 'com.siemens.jjzi'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}

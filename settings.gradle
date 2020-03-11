@@ -1,5 +1,0 @@
-rootProject.name = 'FromJava9To11'
-include 'Java8Sample'
-include 'Java11Sample'
-findProject(':Java11Sample')?.name = 'java11-sample'
-findProject(':Java8Sample')?.name = 'java8-sample'
