@@ -1,4 +1,4 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -34,7 +34,8 @@ public class NewProcessApi {
         System.out.println("Start time: " + info.startInstant().orElse(Instant.now()));
         System.out.printf("Runtime  duration: %sms\n", info.totalCpuDuration().orElse(Duration.ofMillis(0)).toMillis());
         //列出当前所有进程
-        ProcessHandle.allProcesses().limit(10).map(ProcessHandle::info).forEach(i-> System.out.printf("%s\n",i.command().orElse("---")));
+        ProcessHandle.allProcesses().limit(10).map(ProcessHandle::info)
+                     .forEach(i -> System.out.printf("%s\n", i.command().orElse("---")));
         //终止进程
         processHandle.destroy();
         Thread.sleep(4000L);

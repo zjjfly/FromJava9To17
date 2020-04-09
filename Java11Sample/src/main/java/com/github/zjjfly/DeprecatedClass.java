@@ -1,9 +1,10 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 /**
  * @author z00405ze
  */
 @Deprecated
 public class DeprecatedClass {
-    public static void doSomething(){}
+    public static void doSomething() {
+    }
 }

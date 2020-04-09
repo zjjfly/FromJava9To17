@@ -1,15 +1,9 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 /**
  * @author z00405ze
  */
 public class DiamondOperator {
-    public interface Example<T> {
-        void aMethod();
-
-        void bMethod();
-    }
-
     public static void main(String[] args) {
         // 在9之前,下面的代码在编译的时候会报错:cannot use '<>' with anonymous inner classes
         Example example = new Example<>() {
@@ -21,5 +15,11 @@ public class DiamondOperator {
             public void bMethod() {
             }
         };
+    }
+
+    public interface Example<T> {
+        void aMethod();
+
+        void bMethod();
     }
 }

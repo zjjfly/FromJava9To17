@@ -1,4 +1,4 @@
-package com.siemens.jjzi;
+package com.github.jjzi;
 
 /**
  * @author z00405ze

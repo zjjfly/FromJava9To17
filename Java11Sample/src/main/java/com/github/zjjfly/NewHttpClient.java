@@ -1,7 +1,11 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 import java.io.IOException;
-import java.net.*;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.net.ProxySelector;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -50,7 +54,7 @@ public class NewHttpClient {
         CompletableFuture<HttpResponse<String>> responseFuture = client
                 .sendAsync(httpRequest, HttpResponse.BodyHandlers.ofString());
         responseFuture.whenCompleteAsync((stringHttpResponse, throwable) -> {
-            if(null!=throwable){
+            if (null != throwable) {
                 throwable.printStackTrace();
             }
             System.out.println(stringHttpResponse.body());

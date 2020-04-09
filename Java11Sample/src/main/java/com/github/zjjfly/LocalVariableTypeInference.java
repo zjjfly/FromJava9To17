@@ -1,4 +1,4 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -74,6 +74,16 @@ public class LocalVariableTypeInference {
         }
     }
 
+    private static MarathonRunner getObject() {
+        return new Dog();
+    }
+
+    interface MarathonRunner {
+        default void run() {
+            System.out.println("I'm a marathon runner");
+        }
+    }
+
     static class Parent {
         void whistle() {
             System.out.println("Parent-Whistle");
@@ -91,20 +101,10 @@ public class LocalVariableTypeInference {
         }
     }
 
-    interface MarathonRunner {
-        default void run() {
-            System.out.println("I'm a marathon runner");
-        }
-    }
-
     static class Dog implements MarathonRunner {
         void bite() {
             System.out.println("Wang!");
         }
-    }
-
-    private static MarathonRunner getObject() {
-        return new Dog();
     }
 
 }

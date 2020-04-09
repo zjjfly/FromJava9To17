@@ -1,4 +1,4 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 import java.util.List;
 import java.util.stream.Collectors;

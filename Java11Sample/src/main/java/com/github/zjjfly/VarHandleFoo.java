@@ -1,4 +1,4 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 import java.awt.*;
 import java.lang.invoke.MethodHandles;
@@ -8,9 +8,6 @@ import java.lang.invoke.VarHandle;
  * @author z00405ze
  */
 public class VarHandleFoo {
-    volatile int x;
-    private Point[] points;
-
     private static final VarHandle QA;//for arrays
     private static final VarHandle X;//for Variables
 
@@ -23,18 +20,12 @@ public class VarHandleFoo {
         }
     }
 
+    volatile int x;
+    private Point[] points;
+
     public VarHandleFoo(Point[] points) {
         this.points = points;
     }
-
-    public void add2X(int x) {
-        X.set(this, (Integer) X.get(this) + x);
-    }
-
-    public void addToX(int x) {
-        X.getAndAdd(this, x);
-    }
-
 
     public static void main(String[] args) throws InterruptedException {
         Point[] points = new Point[100];
@@ -75,6 +66,14 @@ public class VarHandleFoo {
         X.getAndAdd(foo, 10);
         System.out.println("x:" + X.get(foo));
 
+    }
+
+    public void add2X(int x) {
+        X.set(this, (Integer) X.get(this) + x);
+    }
+
+    public void addToX(int x) {
+        X.getAndAdd(this, x);
     }
 
 }

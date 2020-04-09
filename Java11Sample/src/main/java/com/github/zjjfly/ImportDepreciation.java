@@ -1,8 +1,7 @@
-package com.siemens.jjzi;
+package com.github.zjjfly;
 
 
 //只是导入但不使用是不会发出警告的
-import java.applet.Applet;
 
 /**
  * @author z00405ze
