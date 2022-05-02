@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <parent>
         <groupId>com.github.zjjfly</groupId>
-        <artifactId>java-9-11</artifactId>
+        <artifactId>java-9-17</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>java-8-samples</artifactId>

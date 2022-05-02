@@ -1,2 +1,2 @@
-# FromJava9To11
-code to demonstrate  new features form Java 9-11
+# From Java9 To 17
+code to demonstrate  new features form Java 9-17
