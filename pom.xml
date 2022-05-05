@@ -10,6 +10,7 @@
     <modules>
         <module>Java8Sample</module>
         <module>Java11Sample</module>
+        <module>Java17Sample</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
