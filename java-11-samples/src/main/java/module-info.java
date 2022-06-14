@@ -1,4 +1,4 @@
-module FromJava9To17.java11.sample.main {
+module java11.sample.main {
     requires java.sql;
     requires java.desktop;
     requires java.net.http;

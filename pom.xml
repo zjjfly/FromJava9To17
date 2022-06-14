@@ -9,9 +9,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>java-9-17</name>
   <modules>
-    <module>Java8Sample</module>
-    <module>Java11Sample</module>
-    <module>Java17Sample</module>
+    <module>java-8-samples</module>
+    <module>java-11-samples</module>
+    <module>java-17-samples</module>
   </modules>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>

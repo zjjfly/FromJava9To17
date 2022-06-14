@@ -1,5 +1,8 @@
 package com.github.zjjfly;
 
+import static java.net.http.HttpClient.Version;
+import static java.time.temporal.ChronoUnit.SECONDS;
+
 import java.io.IOException;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -11,9 +14,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
-
-import static java.net.http.HttpClient.Version;
-import static java.time.temporal.ChronoUnit.SECONDS;
 
 /**
  * @author z00405ze
