@@ -1,10 +1,10 @@
 package com.github.zjjfly;
 
 /**
- *
+ * switch可以作为表达式使用，可以有返回值
  *
  * @author zijunjie[https://github.com/zjjfly]
- * @date ss
+ * @date 2022/5/6
  */
 public class Switch {
 

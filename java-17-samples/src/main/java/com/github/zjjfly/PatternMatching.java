@@ -12,7 +12,7 @@ public class PatternMatching {
         //Java16正式引入了instanceof的模式匹配，避免了显式的类型强制转换
         Object obj = "Hello,World";
 
-        //下面代码在s称为模式参数，如果模式匹配右边还有其它使用&&相连的条件，这些条件表达式也可以访问到模式参数
+        //下面代码称为模式参数，如果模式匹配右边还有其它使用&&相连的条件，这些条件表达式也可以访问到模式参数
         if (obj instanceof String s && s.length() > 5) {
             System.out.println("string length: " + s.length());
         }
