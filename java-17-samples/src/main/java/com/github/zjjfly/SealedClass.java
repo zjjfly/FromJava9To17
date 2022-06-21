@@ -1,7 +1,7 @@
 package com.github.zjjfly;
 
 /**
- * Java17正式加入了sealed class，<b>sealed class的子类必须是final,sealed或者no-sealed修饰的</b>
+ * Java17正式加入了sealed class，<b>sealed class的子类必须是final,sealed或者non-sealed修饰的</b>
  *
  * @author zijunjie[https://github.com/zjjfly]
  * @date 2022/5/6
